@@ -57,6 +57,8 @@ class Revision(mwtypes.Revision):
                 if not text_deleted:
                     text = sub_element.text
                 bytes = sub_element.attr('bytes')
+            elif tag == "origin":
+                 pass # TODO:Dekel:new <origion> xml element was added to wikipedia dumps. I do not need it, but it causes he exception below     
             else:
                 raise MalformedXML("Unexpected tag found when processing " +
                                    "a <revision>: '{0}'".format(tag))
